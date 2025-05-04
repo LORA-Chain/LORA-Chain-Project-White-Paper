@@ -6,17 +6,3 @@
 ### Throughout history, we’ve seen that foundational technologies first gain recognition, then evolve into widespread application. Blockchain is entering this next phase. “Decentralization” is the cornerstone of blockchain architecture, while “fairness, openness, and justice” represent the core values it embodies.
 ### Core technologies are the strategic assets of a nation. Blockchain is widely regarded as the next major IT wave following the Internet, and its applications are now rapidly advancing worldwide—from sparks to a raging wildfire.
 
-## 1.2 Bottlenecks in Blockchain Development
-### Blockchain technology has now entered the 3.0 era, making large-scale commercial applications theoretically possible. However, its limited data processing capacity still falls short of meeting the demands of high-frequency, large-scale use cases. In other words, constraints at the infrastructure level are hindering the full potential of upper-layer applications. While the vision is promising, realizing it will take considerable time. Fundamentally, the core issues facing blockchain today are its limited throughput and slow transaction finality.
-
-### To address these challenges, the blockchain industry has been exploring several approaches:
-
-#### · Larger block sizes: This involves increasing the storage capacity of each block. Bitcoin experimented with this approach—originally, each Bitcoin block had a 1MB limit. In late 2017, SegWit2x proposed increasing the block size to 2MB. However, due to security concerns, the SegWit2x hard fork was eventually canceled.
-
-#### · Off-chain transactions: This method includes building solutions like the Lightning Network or sidechains outside the main chain to process transactions off-chain. Ethereum is actively pursuing this path. By locking up a certain amount of ETH or BTC as collateral, users can conduct off-chain transactions through alternative protocols or networks.
-
-#### · Delegated consensus protocols: This involves selecting a group of super nodes to form a smaller consensus group. EOS, for instance, uses a "parliamentary-style" delegated consensus mechanism in which a limited number of nodes produce blocks and broadcast them to the entire network to achieve consensus.
-
-### Despite these efforts, none of the three approaches has fully resolved the trade-offs between transaction speed, decentralization, and security. The inherent tension among these three dimensions continues to pose a bottleneck.
-
-### The LORA public chain aims to address this challenge by developing a next-generation blockchain infrastructure that is highly scalable and compatible. Its mission is to help the industry move beyond proof-of-concept and toward true, large-scale commercial adoption.
