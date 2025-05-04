@@ -40,6 +40,128 @@
 #### 2） Developer Service Layer
 #### 3） On-Chain Service Layer
 #### 4） Underlying Protocol Layer
-![image](https://github.com/user-attachments/assets/911006fe-b519-44e1-8e1b-0db01ad1046d)
+### ![image](https://github.com/user-attachments/assets/911006fe-b519-44e1-8e1b-0db01ad1046d)
+
+## 2.3 Project Design Philosophy of LORA
+### The LORA team aims to build a distributed, production-grade open ecosystem for enterprise-level blockchain applications. It is committed to closely integrating blockchain technology with data applications, fully leveraging the advantages of blockchain to address the growing cost and security challenges posed by centralized systems in real-world application scenarios.
+### LORA adopts the Tendermint cross-chain protocol and employs a 1+N parallel chain structure, static ledger, LRB space-time proof, dynamic storage, polymorphic nodes, node migration and elimination, and a PoS consensus mechanism. Based on the needs of commercial application systems, it provides an open-source IDE development environment to build a truly commercial-grade Blockchain 3.0 ecosystem.
+### The Token Chain, i.e., the public chain's cryptographic token layer, acts as a decentralized digital carrier for payments based on blockchain technology. The encrypted LORA Token system enables peer-to-peer direct transactions, avoiding high fees and complex processes typically associated with centralized payments. All transactions must be validated by network nodes and permanently recorded on the public distributed ledger based on blockchain technology. The LORA Token is the most essential tool for enabling value transfer within the LORA ecosystem.
+
+## 2.4 Technical Features of LORA
+### A blockchain is a chain of data blocks generated using cryptographic methods. Each block contains multiple network transactions and is used to verify data validity (anti-counterfeit) and generate the next block. For ordinary users, it acts as a public ledger recording all transaction history; for developers, it functions as a distributed database. Key features include decentralization, openness, autonomy, and immutability. Blockchain is inherently suited to support decentralized applications (DApps), particularly in data storage.
+### LORA adopts a 1+N multi-chain architecture, essentially comprising a public chain plus N sub-chains. These chains handle business logic and data partitioning rather than being physically isolated as public or private chains. The public chain is singular, while theoretically, there can be unlimited sub-chains. Each sub-chain can run one or more DApps. Using the latest sharding storage technology, the sub-chains support parallel transaction processing. Once transactions are completed, they are asynchronously written to the public chain ledger. This approach is one of the optimal solutions to mitigate network congestion.
+
+## 2.5 Distributed Data System: Public Chain Technical Architecture
+## 2.5.1 Protocol Layer
+### The protocol layer represents the foundational level of blockchain technology. It maintains the network nodes and only provides APIs for interaction. Typically, an official lightweight client (commonly referred to as a wallet) is provided, enabling functions like address creation, signature verification, fund transfers, and balance inquiries. This layer builds the network environment, establishes transaction channels, and defines node reward rules.
+### From a technical perspective, the protocol layer includes four major components: network programming, distributed algorithms, cryptographic signature technologies, and data storage. Network programming capability is the main factor in selecting a development language. Distributed algorithms can be implemented in any language as they are tied to business logic. Signature and storage technologies are largely plug-and-play. The real complexity lies in implementing peer-to-peer networks and handling concurrency. Technologies like distributed algorithms and cryptographic signatures are employed during the P2P implementation process.
+
+## 2.5.2 SOLIDITY-Compatible Virtual Machine Extension Layer
+### The Solidity extension layer enables smart contracts based on Ethereum’s EVM, often referred to as “programmable contracts” or “intelligent contracts.” These contracts are designed to auto-execute when certain conditions are met, such as auto-transferring securities or funds.
+### There are no strict technological constraints at this layer—technologies such as distributed storage, machine learning, VR, IoT, and big data can be integrated. Developers have the freedom to use any programming language, independent of the protocol layer. Aside from interaction with the protocol layer during transactions, development on this layer should remain separate. This layer is closer to the application layer and can be seen as the server-side (Server) in a B/S architecture, whereas the protocol layer functions more like infrastructure. This layered design reduces blockchain data load, increases network independence, and enables flexible, unconstrained development.
+
+## 2.5.3 Application Layer
+### The application layer provides the user-facing interface—products that ordinary users interact with directly. It can be seen as the client-side (Browser) in the B/S model. It facilitates the mainstream adoption of blockchain technology. Typical examples include lightweight wallets. Programming languages for this layer may include C++, JLorScript, Python, Go, etc.
+
+## 2.5.4 Consensus Layer
+### This layer encompasses consensus algorithms and mechanisms that enable widely distributed nodes to efficiently agree on the validity of data blocks in a decentralized blockchain network. It is a core technology of blockchain and serves as an effective mechanism for community governance.
+### LORA adopts a hybrid consensus mechanism based on a honeycomb node network and round-robin verification, offering scalability superior to that of the Lightning Network. The public chain utilizes a multi-layer structure combining the Token Chain and parallel chains to meet the high concurrency and interactivity demands of Web3.0-era DApp ecosystems.
+### The Token Chain is built on a hybrid of PoS + BFT optimal algorithms, multi-chain heterogeneous data incentive layers, and a proof-of-importance mechanism. Its consensus layer is composed of multiple parallel chains with different consensus mechanisms based on specific business requirements, forming a 1+N multi-chain structure that addresses the challenges of scalability and performance in public chains.
+### Token Chains and multi-layer data chains are divided based on logic and data storage requirements and interact via the SEC gateway. This multi-chain structure overcomes the technical bottlenecks and the "blockchain trilemma" inherent in traditional single-chain models, significantly accelerating transaction confirmations and reducing resource consumption in public ledgers, thereby supporting large-scale data throughput.
+
+## 2.5.4.1 Validators
+### In classical Byzantine Fault Tolerant (BFT) algorithms, all nodes have equal weight. In Tendermint, nodes are assigned non-negative voting power, and those with substantial voting power are called validators. Validators participate in the consensus protocol by broadcasting cryptographic signatures, voting, or agreeing on the next block.
+### Voting power can be predefined or dynamically modified by the blockchain based on the application logic. For instance, in PoS applications like the Midas Hub, voting power may be determined by the amount of tokens staked. Fractions like 2/3 or 1/3 refer to proportions of total voting power, not total validators, unless all validators have equal weight. “>2/3” means “more than two-thirds,” while “≥1/3” means “one-third or more.”
+
+## 2.5.4.2 Tendermint Consensus
+### Tendermint is a partially synchronous Byzantine Fault Tolerant (BFT) consensus protocol derived from the DLS algorithm.
+### It is known for simplicity, high performance, and fork accountability. It requires a fixed and known set of validators, each identifiable by public keys. Validators attempt to reach consensus on a proposed block containing a series of transactions. In each round, a proposer is selected to initiate a block. Validators then vote in phases to accept the block or move to the next round. Proposers are selected from the validator set based on weighted voting rights.
+### Tendermint uses over-two-thirds majority voting and a locking mechanism to ensure safety, similar to delegated PoS. To compromise safety, malicious actors must control more than one-third of voting power and issue multiple conflicting votes.
+### If a group of validators compromises safety or attempts to do so, the protocol can identify them by tracking conflicting blocks and problematic votes.
+### Tendermint combines strong security with excellent performance. Written in Rust for high-efficiency smart contracts, it can process thousands of transactions per second in a globally distributed network (e.g., 64-bit nodes across seven data centers on five continents), with order submission delays of only 1–2 seconds. Remarkably, even in hostile environments—validator crashes or malicious votes—it maintains high transaction throughput.
+
+## 2.5.5 Incentive Layer
+### This layer utilizes extended chain storage technology, storing private key signatures and base data on auxiliary chains. When users upload large files, the chain-linked data storage network automatically searches for nodes to form a new P2P network. This ensures data integrity while enabling ownership confirmation, thereby enhancing both storage and access security.
+
+## 2.5.6 Extended P2P Protocol
+### Scalability addresses the issue of blockchain data silos. We regard upgrades and forks as essential evolutionary mechanisms. Forks result in one main chain and several sub-chains. Technically, main and sub-chains are equal peers, distinguished only by consensus-defined identifiers. Each sub-chain can be tailored for specific business applications. By constructing a VEP (Value Exchange Protocol) between sub-chains—functioning like gateways—they can exchange data and value.
+### This collaborative structure enables a multi-application blockchain ecosystem. Additionally, off-chain online data can be integrated into the LORA ecosystem, and with smart contract support, real-world events can trigger on-chain responses.
+
+## 2.5.7 Homogeneous Cross-Chain Mechanism
+### Traditional blockchain networks such as Bitcoin and Ethereum are based on a single-chain architecture, where all transactions and state transitions occur on a single ledger. This structure has the advantage of simplicity in both transaction processing and consensus mechanisms, which was sufficient in the early stages of blockchain development. However, as the technology has evolved and market demands have grown, the limitations of the single-chain design have become increasingly evident:
+#### · Throughput and performance bottlenecks: For example, Bitcoin supports only ~7 transactions per second (TPS) and requires six block confirmations for finality. Ethereum has a block interval of 10–20 seconds. These constraints significantly hinder the scalability needed for growing blockchain use cases.
+#### · Intra-chain business interference: In a single-chain system, heavy traffic in one application domain can congest the entire network, delaying otherwise normal transactions and confirmations.
+#### · Isolated architecture: Single chains lack native mechanisms for inter-chain communication, limiting their ability to support cross-platform business interactions.
+### To overcome these challenges, LORA adopts a multi-chain architecture based on the Tendermint consensus protocol.
+### LORA introduces a parallel multi-mainchain model, where multiple main chains can be instantiated, each dedicated to a specific business domain. These chains operate independently but remain loosely coupled, leveraging parallel processing for enhanced performance. To handle procedural blocks, LORA employs a data archiving mechanism that archives expired data into historical storage, further improving system efficiency.
+### This multi-chain structure not only supports various business types and operational models, but also ensures high performance. Cross-chain consensus enables both data auditing and value interoperability. Given the diversity of real-world business needs, a single-chain structure is inherently inadequate. In contrast, LORA assigns each business scenario to an independent chain focused on a minimal, cohesive set of functions. This not only enhances security but also ensures efficient use of computational and storage resources.
+### For instance, compute-intensive, I/O-intensive, and hybrid applications can each run on purpose-built subchains, optimized for their respective characteristics. Applications requiring higher security and strict consistency—such as banking services—can be isolated to operate on the most secure layer of the architecture.
+
+## 2.5.8 Heterogeneous / Relay-Based Flexible Cross-Chain Mechanism
+### To enable seamless communication between different blockchain systems, LORA implements a general-purpose flexible cross-chain mechanism, powered by coordinated smart contracts, asynchronous communication protocols, state machines, and hash time-lock technology. This mechanism ensures interoperability of digital assets and value across internal and external blockchain environments, while maintaining consensus integrity and trustless value transfer.
+### LORA’s cross-chain strategy comprises two components:
+#### 1） Interoperability with external chains: Communication between LORA and external blockchains is achieved via a universal smart contract interface that adapts to the unique characteristics of external chains. Through state-machine-driven asynchronous operations, LORA supports secure and flexible interactions with heterogeneous networks.
+#### 2） Internal interoperability between LORA-based chains: Within the LORA ecosystem, cross-chain communication is supported by more complex smart contracts and relay chains that coordinate the exchange between various LORA-native subchains or external chains. These relay chains act as intermediaries to bridge networks with differing architectures or consensus models.
+### Cross-chain transactions serve as a trustless messaging protocol across blockchain networks, forming a critical infrastructure layer for inter-chain communication. Typically, a cross-chain transaction originates on a source chain and is transmitted via bridges and relay networks before reaching the destination chain. To incentivize participants in this transmission process, transaction initiators must pay fees in LRB, LORA’s native token, ensuring proper economic incentives for relayers and validators at each hop.
+### LORA implements a cross-chain adapter layer, which generates compatible block headers to facilitate consensus and state verification across chains.
+### To accommodate varying block generation speeds across different chains, LORA introduces a hierarchical sidechain mechanism. Chains are categorized into tiers based on their block times, and each tier is supported by a dedicated adapter chain or module. This design ensures time-aligned cross-chain transactions and avoids mismatches due to inconsistent block intervals.
+
+## 2.5.9 LORA Sidechain Architecture
+## 2.5.9.1 SideChain
+### ![image](https://github.com/user-attachments/assets/a1a5707c-a34b-44e8-bcdd-a940725a58ab)
+### Pegged Sidechain Technology Pegged Sidechains enable the transfer of digital assets across multiple blockchain networks. This allows users to access new cryptocurrency ecosystems while continuing to use their existing assets and applications. With pegged sidechains, users can participate in emerging blockchain systems without having to convert or abandon their original holdings, greatly enhancing system compatibility and user experience.
+### A sidechain is a specialized blockchain that utilizes Simplified Payment Verification (SPV) pegging technology to enable asset transfers between blockchains. This mechanism empowers users to interact with new crypto environments using assets from their original blockchain. It also addresses long-standing concerns with the token incentive layer’s resistance to innovation—developers can simply create a new sidechain, connect it to the base system, and inherit or reuse the original chain’s functionalities. This avoids issues like liquidity shortages or excessive volatility typically associated with launching new tokens.
+### Moreover, since sidechains operate as relatively independent and isolated systems, critical issues occurring within one sidechain are unlikely to affect the main chain or other sidechains. This significantly reduces systemic risk and operational costs.
+
+## 2.5.9.2 Origin of Sidechains
+### The term sidechain does not refer to a specific blockchain. Instead, it refers to any blockchain that adheres to a sidechain protocol. This designation is used in contrast to a “main chain,” or the original blockchain in a given ecosystem.
+
+## 2.5.9.3 Definition of Sidechain Protocol
+### A sidechain protocol is a system that allows tokens from the native main chain to be securely transferred to another blockchain—and back again—without compromising the security or integrity of the system. In essence, it enables two-way pegging (2WP) between the main chain and sidechains.
+### This protocol has substantial implications. Any blockchain, including competing systems like Ethereum, can theoretically function as a sidechain—so long as it complies with the pegging protocol. This means the native token is no longer confined to its own blockchain but can circulate freely across multiple chains, greatly expanding its utility and market reach.
+### As a result, developers and innovators can build diverse applications that integrate with the native blockchain by simply conforming to the sidechain protocol. This strengthens the position and network effect of the main chain while promoting a broader ecosystem of interoperable services.
+### ![image](https://github.com/user-attachments/assets/95b00386-973f-4e8e-bcbb-c31b66e906c1)
+
+Two-Way Pegging is divided into the following stages:
+
+## 2.5.9.4 Send Locking Transaction
+### Lock the native transaction data on the main chain.
+### Operation by the Native Token Holder,The token holder sends a special transaction to lock the tokens on the blockchain.
+### ![image](https://github.com/user-attachments/assets/aee87ac5-b64e-492d-87b6-d93d6cf2c305)
+
+## 2.5.9.5 Pegged Sidechain Protocol:
+### ➢ Wait for a Confirmation Period
+#### The purpose of the confirmation period is to wait for the locking transaction to be confirmed by more blocks, which can prevent counterfeit locking transactions and denial-of-service attacks. The typical waiting time is 1-2 days.
+### ➢ Redeem Native Token on the Sidechain
+#### After the confirmation period ends, the user creates a transaction on the sidechain spending the output of the locking transaction and provides an SPV proof of work, outputting to their address on the sidechain. This transaction is called the redemption transaction, and the SPV proof of work refers to the proof of work for the block containing the redemption transaction.
+### ➢ Wait for a Competition Period
+#### The purpose of the competition period is to prevent double-spending. During this period:
+##### (1) The redemption transaction will not be included in a block.
+##### (2) New bitcoins transmitted to the sidechain cannot be used.
+##### (3) If a larger proof of work appears, i.e., the redemption transaction includes an SPV proof with a higher difficulty than the Bitcoin main chain, the previous redemption transaction will be replaced.
+
+## 2.5.9.6 Role of Sidechains
+### Sidechains can enable blockchain systems to achieve better performance and privacy protection. They can also be extended to support various assets, such as stocks, bonds, and currencies in both the real world and virtual worlds. Additionally, sidechains can add functionalities such as smart contracts, secure processing, and real-world property registration. Sidechains can also have other sidechains for micropayments. They can be used for experiments with pre-release versions of future sidechains or for testing versions of Bitcoin.
+
+## 2.5.9.7 Current Technology: Complete Script vs. Sidechains
+### A notable highlight of large public blockchain systems is their script engines. Based on a complete script engine, it is possible to implement not only basic transfer functions but also multi-signature, collateral, betting data, and other smart contract applications. However, for security and implementation difficulty reasons, the script systems of the first-generation blockchain systems were designed to be relatively simple with many limitations. For example, they did not support loops, the script length was limited, and only a few standard types of transactions were supported.
+### Taking Ethereum as an example of the second-generation blockchain systems, its main feature is the construction of an extended smart contract layer, which significantly enhances the script engine’s functionality. It added new instructions for reading the blockchain, billing, and jumping, and removed restrictions on stack memory, function call depth, and script length. Its scripting language is essentially Turing-complete, allowing developers to implement almost any functionality expressible in mathematical terms.
+### Since Ethereum, extended scripts have become a popular way to build decentralized development platforms. However, one major drawback of this approach is that both the application code and the data generated by the application reside on the same blockchain, causing rapid blockchain expansion. Ethereum has attempted to mitigate this by optimizing and compressing blocks and transactions, but this is only a temporary solution.
+### In addition, applications based on scripts share the same ledger, meaning parameters like block generation time cannot be customized, which undoubtedly limits the personalization of applications.
+### ![image](https://github.com/user-attachments/assets/4417ee22-0adf-4cb5-9090-1f151e507a29)
+### The sidechain mechanism achieves scalability through another dimension, where each sidechain runs on a different distributed node network, with independent audiences, investors, and development teams. This natural shard solution not only solves the blockchain expansion issue but also allows each application to have a personalized ledger. Its consensus mechanism, block parameters, and transaction types can all be customized, so we believe sidechains are a more cost-effective, flexible, and user-friendly solution compared to complete transaction scripts.
+
+## 2.5.10 Flexible Support for Business Applications
+### LORA achieves ease of use through two main aspects. The first is providing a Blockchain-as-a-Service (BaaS) system to lower the usage threshold for businesses and individuals. Through network forking, data customization, smart contract deployment and upgrades, asset transaction monitoring, and supplemented with visualization features, blockchain applications become simple and easy to use. It also offers multi-language support, from Lua and C++ to J-LOR, enabling developers from different platforms to conveniently develop applications.
+
+## 2.5.11 Open-source Graphene Technology
+### In response to Ethereum's inefficient transmission speed and the information silos existing between public blockchains, each public blockchain has proposed its own scalability and cross-chain solutions, but the actual implementation has not been ideal. Many public blockchains have not launched as scheduled. For example, the most popular public blockchain in 2018, EOS, claimed to reach millions of TPS, but the actual TPS in operation was only about 3000. However, the actual TPS of LORA has reached 39,000+, and it is expected to grow exponentially in the future. How did LORA achieve this? LORA is based on the excellent open-source Graphene technology and BFT optimization algorithms, transforming the confirmation of transaction behavior into the confirmation of algorithmic proof, which theoretically increases efficiency by 20 times. LORA inherits the mature architecture, performance, and other technical advantages from Graphene. The main technical advantages of Graphene include: supporting a transaction throughput capacity of 10,000+ TPS, and an average transaction confirmation delay of seconds.
+
+## 2.5.12 Sharding Technology
+### LORA introduces Sharding technology, supporting horizontal scalability, and combines network sharding with transaction sharding. It also provides Blockchain-as-a-Service (BaaS) to developers, offering rich BaaS APIs, data transaction APIs, and native APIs for developing blockchain applications.
+### By adopting the POS consensus protocol, along with the advanced open-source Graphene solution and sharding technology, LORA achieves scalability and cross-chain goals. In most current operating environments, TPS has reached 39,000+.
+### LORA provides an advanced and stable cross-chain underlying public blockchain, with the Internet of Things (IoT) and SWAP being the first applications on LORA.
+### ![image](https://github.com/user-attachments/assets/a4d06b60-cf73-4a77-815b-561a116e36d1)
+
 
 
