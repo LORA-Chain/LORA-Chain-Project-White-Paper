@@ -276,8 +276,7 @@ To prevent this, LORA-compatible digital wallets must scan all digital certifica
 ### · LORA Online
 ### · LORA SDK
 ### · LORA Module List
-
-###These components form a comprehensive development and operational environment for the LORA ecosystem.
+### These components form a comprehensive development and operational environment for the LORA ecosystem.
 
 
 
