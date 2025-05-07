@@ -278,10 +278,23 @@ To prevent this, LORA-compatible digital wallets must scan all digital certifica
 ### · LORA SDK
 ### · LORA Module List
 ### These components form a comprehensive development and operational environment for the LORA ecosystem.
-### ![f8492666b99a64560d13fbbe9b53562](https://github.com/user-attachments/assets/7102684d-4ca9-4d6e-b363-15b5d354b07d)
 
 
 
+
+# Part 5. LRB issuance
+
+
+## LRB issuance mechanism
+## The total amount is 10 billion, which are distributed as follows:
+### · Super node output: 10% (1,000,000,000 pieces, output by block, decreasing year by year, and completed in ten years)
+### · Block Explosion Node Output: 30% (3,000,000,000 pieces, output by block, decreasing year by year, and completed in ten years)
+### · Verification node output: 30% (3,000,000,000 pieces, produced by block, increasing year by year, and completed in three years)
+### · Community Ecosystem Incentives: 10% (1,000,000,000 pieces, used according to the community incentive plan)
+### · Future Development Fund: 10% (1,000,000,000 tokens, locked, unlocked linearly over ten years)
+### · Super Node Staking: 5% (500,000,000 pieces, pledged for ten years, unlocked upon expiration)
+### · Technical team incentives: 2.5% (250,000,000 tokens, locked, unlocked linearly over ten years)
+### · Operation team incentive: 2.5% (250,000,000 tokens, locked, unlocked linearly over ten years)
 
 # Part 6. LORA Fully Encrypted Ecosystem
 
