@@ -1,5 +1,6 @@
 # Part1. Project Background
 
+# ![81269dd5a728e37e104d28dec38d0bc](https://github.com/user-attachments/assets/a036d061-b5be-4a8c-9abc-79d027dfd0fc)
 
 ## 1.1 Blockchain is the new digital technology following IT and the Internet
 ### Since the advent of the Internet, the cost of information dissemination in human society has been significantly reduced. This leap in communication efficiency has unleashed tremendous productivity. However, traditional internet infrastructure primarily focuses on the efficiency of information transmission, while neglecting the confirmation of ownership and attribution of data. As a result, persistent and structural issues such as “naked data” and “orphaned information” have emerged. Some forms of information carry strong value attributes—for example, remittance and payment details—which still require third-party intermediaries to ensure security and trust. Consequently, the cost of value transfer remains high today.
