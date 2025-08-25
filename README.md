@@ -293,9 +293,9 @@ To prevent this, LORA-compatible digital wallets must scan all digital certifica
 ### · Verification node output: 30% (3,000,000,000 pieces, produced by block, Linear output, completed in five years)
 ### · Community Ecosystem Incentives: 10% (1,000,000,000 pieces, used according to the community incentive plan)
 ### · Future Development Fund: 10% (1,000,000,000 tokens, locked, unlocked linearly over ten years)
-### · Super Node Staking: 5% (500,000,000 pieces, pledged for ten years, unlocked upon expiration)
-### · Technical team incentives: 2.5% (250,000,000 tokens, locked, unlocked linearly over ten years)
+### · Technical team incentives: 5% (500,000,000 tokens, locked, unlocked linearly over ten years)
 ### · Operation team incentive: 2.5% (250,000,000 tokens, locked, unlocked linearly over ten years)
+### · Early Investors: 2.5% (250,000,000 tokens)
 
 # Part 6. LORA Fully Encrypted Ecosystem
 
