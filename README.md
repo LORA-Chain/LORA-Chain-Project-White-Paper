@@ -290,7 +290,7 @@ To prevent this, LORA-compatible digital wallets must scan all digital certifica
 ## The total amount is 10 billion, which are distributed as follows:
 ### · Super node output: 10% (1,000,000,000 pieces, output by block, decreasing year by year, and completed in ten years)
 ### · Block Explosion Node Output: 30% (3,000,000,000 pieces, output by block, decreasing year by year, and completed in ten years)
-### · Verification node output: 30% (3,000,000,000 pieces, produced by block, increasing year by year, and completed in three years)
+### · Verification node output: 30% (3,000,000,000 pieces, produced by block, Linear output, completed in five years)
 ### · Community Ecosystem Incentives: 10% (1,000,000,000 pieces, used according to the community incentive plan)
 ### · Future Development Fund: 10% (1,000,000,000 tokens, locked, unlocked linearly over ten years)
 ### · Super Node Staking: 5% (500,000,000 pieces, pledged for ten years, unlocked upon expiration)
