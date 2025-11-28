@@ -294,8 +294,8 @@ To prevent this, LORA-compatible digital wallets must scan all digital certifica
 ### · Community Ecosystem Incentives: 10% (1,000,000,000 pieces, used according to the community incentive plan)
 ### · Future Development Fund: 10% (1,000,000,000 tokens, locked, unlocked linearly over ten years)
 ### · Technical team incentives: 5% (500,000,000 tokens, locked, unlocked linearly over ten years)
-### · Operation team incentive: 2.5% (250,000,000 tokens, locked, unlocked linearly over ten years)
-### · Early Investors: 2.5% (250,000,000 tokens)
+### · Operation team incentive: 2% (200,000,000 tokens, locked, unlocked linearly over ten years)
+### · Early Investors: 3% (300,000,000 tokens)
 
 # Part 6. LORA Fully Encrypted Ecosystem
 
